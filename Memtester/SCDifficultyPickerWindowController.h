@@ -1,5 +1,5 @@
 //
-//  SCLevelPickerWindowController.h
+//  SCDifficultyPickerWindowController.h
 //  Memtester
 //
 //  Created by Alex Jackson on 07/05/2012.
@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface SCLevelPickerWindowController : NSWindowController
+@interface SCDifficultyPickerWindowController : NSWindowController
 
 - (IBAction)chooseEasyLevel:(id)sender;
 - (IBAction)chooseMediumLevel:(id)sender;

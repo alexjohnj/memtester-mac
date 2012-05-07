@@ -9,7 +9,7 @@
 @implementation SCAppDelegate
 
 @synthesize window = _window;
-@synthesize levelChooser = _levelChooser;
+@synthesize difficultyChooser = _levelChooser;
 @synthesize gameView;
 @synthesize gameViewController;
 
@@ -27,9 +27,9 @@ kQuitApplication = 99
 
 -(void)chooseDifficulty{
     if(_levelChooser == nil)
-        _levelChooser = [[SCLevelPickerWindowController alloc] initWithWindowNibName:@"SCLevelPickerWindowController"];
+        _levelChooser = [[SCDifficultyPickerWindowController alloc] initWithWindowNibName:@"SCDifficultyPickerWindow"];
     
-    [NSApp beginSheet:self.levelChooser.window
+    [NSApp beginSheet:self.difficultyChooser.window
        modalForWindow:[[NSApp delegate] window]
         modalDelegate:self
        didEndSelector:@selector(didEndSheet:returnCode:contextInfo:)

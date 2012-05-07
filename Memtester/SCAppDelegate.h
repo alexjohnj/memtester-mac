@@ -5,13 +5,13 @@
 //  Created by Alex Jackson on 07/05/2012.
 
 #import <Cocoa/Cocoa.h>
-#import "SCLevelPickerWindowController.h"
+#import "SCDifficultyPickerWindowController.h"
 #import "SCGameController.h"
 
 @interface SCAppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
-@property (strong) SCLevelPickerWindowController *levelChooser;
+@property (strong) SCDifficultyPickerWindowController *difficultyChooser;
 @property (weak) IBOutlet NSView *gameView;
 
 @property (strong) SCGameController *gameViewController;
