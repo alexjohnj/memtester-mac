@@ -18,6 +18,7 @@
 		FA6078D41557F7C00006D971 /* SCGameData.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6078D31557F7C00006D971 /* SCGameData.m */; };
 		FA7D01AD155862E70064FA29 /* SCDifficultyPickerWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7D01AB155860C80064FA29 /* SCDifficultyPickerWindowController.m */; };
 		FA7D01AE155863000064FA29 /* SCDifficultyPickerWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7D01AC155860C80064FA29 /* SCDifficultyPickerWindow.xib */; };
+		FA7D01B01558680D0064FA29 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = FA7D01AF1558680D0064FA29 /* icon.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		FA7D01AA155860C80064FA29 /* SCDifficultyPickerWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCDifficultyPickerWindowController.h; sourceTree = "<group>"; };
 		FA7D01AB155860C80064FA29 /* SCDifficultyPickerWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCDifficultyPickerWindowController.m; sourceTree = "<group>"; };
 		FA7D01AC155860C80064FA29 /* SCDifficultyPickerWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCDifficultyPickerWindow.xib; sourceTree = "<group>"; };
+		FA7D01AF1558680D0064FA29 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		FA6078B61557F7990006D971 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FA7D01AF1558680D0064FA29 /* icon.icns */,
 				FA6078B71557F7990006D971 /* Memtester-Info.plist */,
 				FA6078B81557F7990006D971 /* InfoPlist.strings */,
 				FA6078BB1557F7990006D971 /* main.m */,
@@ -179,6 +182,7 @@
 				FA6078C01557F7990006D971 /* Credits.rtf in Resources */,
 				FA6078C61557F7990006D971 /* MainMenu.xib in Resources */,
 				FA4FAC641558509E0031B712 /* SCGameView.xib in Resources */,
+				FA7D01B01558680D0064FA29 /* icon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
