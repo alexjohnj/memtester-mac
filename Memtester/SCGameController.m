@@ -70,6 +70,7 @@
         [self.submitItemButton setEnabled:YES];
         [self.itemsGuessField setEnabled:YES];
         [self.itemField setStringValue:@""];
+        [[[NSApp delegate] window] makeFirstResponder:self.itemsGuessField];
         return;
     }
     
