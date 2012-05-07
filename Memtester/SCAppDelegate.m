@@ -59,4 +59,8 @@ kQuitApplication = 99
     }
 }
 
+-(BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender{
+    return YES;
+}
+
 @end
