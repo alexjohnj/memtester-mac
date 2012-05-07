@@ -20,7 +20,7 @@
     return self;
 }
 
--(IBAction)beginGame:(id)sender{
+-(void)awakeFromNib{
     [self startNewGame];
 }
 
@@ -80,7 +80,7 @@
     self.displayItemsTimerCount++;
 }
 
-- (IBAction)submitItem:(id)sender{
+- (IBAction)submitNextItem:(id)sender{
     [self.currentGame storeSubmittedItem:self.itemsGuessField.stringValue];
     if(self.currentGame.itemsLeftToEnter == 0){
         [self checkEnteredItems];
@@ -117,5 +117,4 @@
             break;
     }
 }
-
 @end

@@ -18,6 +18,7 @@
 @property (weak) IBOutlet NSButton *cheatButton2;
 @property (weak) IBOutlet NSButton *cheatButton3;
 
+
 @property (assign) int difficulty;
 @property (strong) SCGameData *currentGame;
 
@@ -25,7 +26,7 @@
 @property (strong) NSTimer *displayItemsTimer;
 @property (assign) int displayItemsTimerCount;
 
-- (IBAction)submitItem:(id)sender;
+- (IBAction)submitNextItem:(id)sender;
 - (IBAction)cheat:(id)sender;
 
 - (void)startNewGame;
@@ -35,6 +36,6 @@
 - (void)checkEnteredItems;
 
 - (void)sheetDidEnd:(NSWindow *)sheet resultCode:(NSInteger)resultCode contextInfo:(void *)contextInfo;
--(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil difficultyLevel:(int)level;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil difficultyLevel:(int)level;
 
 @end

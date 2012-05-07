@@ -7,18 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA4FAC5D155844060031B712 /* SCLevelPickerWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4FAC5B155844060031B712 /* SCLevelPickerWindowController.m */; };
+		FA4FAC5E155844060031B712 /* SCLevelPickerWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4FAC5C155844060031B712 /* SCLevelPickerWindowController.xib */; };
+		FA4FAC641558509E0031B712 /* SCGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4FAC631558509E0031B712 /* SCGameView.xib */; };
 		FA6078B01557F7990006D971 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6078AF1557F7990006D971 /* Cocoa.framework */; };
 		FA6078BA1557F7990006D971 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA6078B81557F7990006D971 /* InfoPlist.strings */; };
 		FA6078BC1557F7990006D971 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6078BB1557F7990006D971 /* main.m */; };
 		FA6078C01557F7990006D971 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FA6078BE1557F7990006D971 /* Credits.rtf */; };
 		FA6078C31557F7990006D971 /* SCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6078C21557F7990006D971 /* SCAppDelegate.m */; };
 		FA6078C61557F7990006D971 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6078C41557F7990006D971 /* MainMenu.xib */; };
-		FA6078CE1557F7A80006D971 /* SCAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6078CD1557F7A80006D971 /* SCAppController.m */; };
 		FA6078D11557F7B70006D971 /* SCGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6078D01557F7B70006D971 /* SCGameController.m */; };
 		FA6078D41557F7C00006D971 /* SCGameData.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6078D31557F7C00006D971 /* SCGameData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA4FAC5A155844060031B712 /* SCLevelPickerWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCLevelPickerWindowController.h; path = ../SCLevelPickerWindowController.h; sourceTree = "<group>"; };
+		FA4FAC5B155844060031B712 /* SCLevelPickerWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCLevelPickerWindowController.m; path = ../SCLevelPickerWindowController.m; sourceTree = "<group>"; };
+		FA4FAC5C155844060031B712 /* SCLevelPickerWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SCLevelPickerWindowController.xib; path = ../SCLevelPickerWindowController.xib; sourceTree = "<group>"; };
+		FA4FAC631558509E0031B712 /* SCGameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SCGameView.xib; path = Memtester/SCGameView.xib; sourceTree = "<group>"; };
 		FA6078AB1557F7990006D971 /* Memtester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memtester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6078AF1557F7990006D971 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		FA6078B21557F7990006D971 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -32,8 +38,6 @@
 		FA6078C11557F7990006D971 /* SCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCAppDelegate.h; sourceTree = "<group>"; };
 		FA6078C21557F7990006D971 /* SCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCAppDelegate.m; sourceTree = "<group>"; };
 		FA6078C51557F7990006D971 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		FA6078CC1557F7A80006D971 /* SCAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAppController.h; sourceTree = "<group>"; };
-		FA6078CD1557F7A80006D971 /* SCAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAppController.m; sourceTree = "<group>"; };
 		FA6078CF1557F7B70006D971 /* SCGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGameController.h; sourceTree = "<group>"; };
 		FA6078D01557F7B70006D971 /* SCGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGameController.m; sourceTree = "<group>"; };
 		FA6078D21557F7C00006D971 /* SCGameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGameData.h; sourceTree = "<group>"; };
@@ -55,6 +59,7 @@
 		FA6078A01557F7990006D971 = {
 			isa = PBXGroup;
 			children = (
+				FA4FAC631558509E0031B712 /* SCGameView.xib */,
 				FA6078B51557F7990006D971 /* Memtester */,
 				FA6078AE1557F7990006D971 /* Frameworks */,
 				FA6078AC1557F7990006D971 /* Products */,
@@ -91,10 +96,11 @@
 		FA6078B51557F7990006D971 /* Memtester */ = {
 			isa = PBXGroup;
 			children = (
+				FA4FAC5A155844060031B712 /* SCLevelPickerWindowController.h */,
+				FA4FAC5B155844060031B712 /* SCLevelPickerWindowController.m */,
+				FA4FAC5C155844060031B712 /* SCLevelPickerWindowController.xib */,
 				FA6078C11557F7990006D971 /* SCAppDelegate.h */,
 				FA6078C21557F7990006D971 /* SCAppDelegate.m */,
-				FA6078CC1557F7A80006D971 /* SCAppController.h */,
-				FA6078CD1557F7A80006D971 /* SCAppController.m */,
 				FA6078CF1557F7B70006D971 /* SCGameController.h */,
 				FA6078D01557F7B70006D971 /* SCGameController.m */,
 				FA6078C41557F7990006D971 /* MainMenu.xib */,
@@ -171,6 +177,8 @@
 				FA6078BA1557F7990006D971 /* InfoPlist.strings in Resources */,
 				FA6078C01557F7990006D971 /* Credits.rtf in Resources */,
 				FA6078C61557F7990006D971 /* MainMenu.xib in Resources */,
+				FA4FAC5E155844060031B712 /* SCLevelPickerWindowController.xib in Resources */,
+				FA4FAC641558509E0031B712 /* SCGameView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,9 +191,9 @@
 			files = (
 				FA6078BC1557F7990006D971 /* main.m in Sources */,
 				FA6078C31557F7990006D971 /* SCAppDelegate.m in Sources */,
-				FA6078CE1557F7A80006D971 /* SCAppController.m in Sources */,
 				FA6078D11557F7B70006D971 /* SCGameController.m in Sources */,
 				FA6078D41557F7C00006D971 /* SCGameData.m in Sources */,
+				FA4FAC5D155844060031B712 /* SCLevelPickerWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
