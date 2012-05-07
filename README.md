@@ -14,12 +14,6 @@ My friend has it on a GoogleCode page. There's a desktop version (that needs Jav
 
 [MemTester (Original)](https://code.google.com/p/mem-tester/)
 
-## Screenshots
-
-![](Screenshots/difficultySelection.png)
-
-![](Screenshots/ingamePicture.png)
-
 ## License
 
 My friend has it under the GNU GPL v3 license. Does that mean I have to? 
