@@ -13,6 +13,9 @@
 		FA6078C01557F7990006D971 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FA6078BE1557F7990006D971 /* Credits.rtf */; };
 		FA6078C31557F7990006D971 /* SCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6078C21557F7990006D971 /* SCAppDelegate.m */; };
 		FA6078C61557F7990006D971 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6078C41557F7990006D971 /* MainMenu.xib */; };
+		FA6078CE1557F7A80006D971 /* SCAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6078CD1557F7A80006D971 /* SCAppController.m */; };
+		FA6078D11557F7B70006D971 /* SCGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6078D01557F7B70006D971 /* SCGameController.m */; };
+		FA6078D41557F7C00006D971 /* SCGameData.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6078D31557F7C00006D971 /* SCGameData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,14 +24,20 @@
 		FA6078B21557F7990006D971 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		FA6078B31557F7990006D971 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FA6078B41557F7990006D971 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		FA6078B71557F7990006D971 /* Memtester-Info.plist */ = {isa = PBXFileReference; path = "Memtester-Info.plist"; sourceTree = "<group>"; };
+		FA6078B71557F7990006D971 /* Memtester-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Memtester-Info.plist"; sourceTree = "<group>"; };
 		FA6078B91557F7990006D971 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FA6078BB1557F7990006D971 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FA6078BD1557F7990006D971 /* Memtester-Prefix.pch */ = {isa = PBXFileReference; path = "Memtester-Prefix.pch"; sourceTree = "<group>"; };
+		FA6078BD1557F7990006D971 /* Memtester-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Memtester-Prefix.pch"; sourceTree = "<group>"; };
 		FA6078BF1557F7990006D971 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		FA6078C11557F7990006D971 /* SCAppDelegate.h */ = {isa = PBXFileReference; path = SCAppDelegate.h; sourceTree = "<group>"; };
+		FA6078C11557F7990006D971 /* SCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCAppDelegate.h; sourceTree = "<group>"; };
 		FA6078C21557F7990006D971 /* SCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCAppDelegate.m; sourceTree = "<group>"; };
 		FA6078C51557F7990006D971 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		FA6078CC1557F7A80006D971 /* SCAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAppController.h; sourceTree = "<group>"; };
+		FA6078CD1557F7A80006D971 /* SCAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAppController.m; sourceTree = "<group>"; };
+		FA6078CF1557F7B70006D971 /* SCGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGameController.h; sourceTree = "<group>"; };
+		FA6078D01557F7B70006D971 /* SCGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGameController.m; sourceTree = "<group>"; };
+		FA6078D21557F7C00006D971 /* SCGameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGameData.h; sourceTree = "<group>"; };
+		FA6078D31557F7C00006D971 /* SCGameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGameData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +93,13 @@
 			children = (
 				FA6078C11557F7990006D971 /* SCAppDelegate.h */,
 				FA6078C21557F7990006D971 /* SCAppDelegate.m */,
+				FA6078CC1557F7A80006D971 /* SCAppController.h */,
+				FA6078CD1557F7A80006D971 /* SCAppController.m */,
+				FA6078CF1557F7B70006D971 /* SCGameController.h */,
+				FA6078D01557F7B70006D971 /* SCGameController.m */,
 				FA6078C41557F7990006D971 /* MainMenu.xib */,
+				FA6078D21557F7C00006D971 /* SCGameData.h */,
+				FA6078D31557F7C00006D971 /* SCGameData.m */,
 				FA6078B61557F7990006D971 /* Supporting Files */,
 			);
 			path = Memtester;
@@ -168,6 +183,9 @@
 			files = (
 				FA6078BC1557F7990006D971 /* main.m in Sources */,
 				FA6078C31557F7990006D971 /* SCAppDelegate.m in Sources */,
+				FA6078CE1557F7A80006D971 /* SCAppController.m in Sources */,
+				FA6078D11557F7B70006D971 /* SCGameController.m in Sources */,
+				FA6078D41557F7C00006D971 /* SCGameData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +307,7 @@
 				FA6078CB1557F7990006D971 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
