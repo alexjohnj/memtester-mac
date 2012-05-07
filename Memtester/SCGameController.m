@@ -96,10 +96,10 @@
     }
     else{
         NSAlert *gameOverAlert = [NSAlert alertWithMessageText:@"Game Over :("
-                                                 defaultButton:@"New Game"
+                                                 defaultButton:@"Try Again"
                                                alternateButton:@"Quit"
                                                    otherButton:nil
-                                     informativeTextWithFormat:@"That's wrong."];
+                                     informativeTextWithFormat:[NSString stringWithFormat:@"That wasn't quite right.\n Your score: %d", self.currentGame.score]];
         [gameOverAlert beginSheetModalForWindow:[[NSApp delegate]window]
                                   modalDelegate:self
                                  didEndSelector:@selector(sheetDidEnd:resultCode:contextInfo:)
