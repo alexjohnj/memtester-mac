@@ -16,7 +16,8 @@
 
 @property (strong) SCGameController *gameViewController;
 
--(IBAction)chooseNewDifficulty:(id)sender;
+- (IBAction)chooseNewDifficulty:(id)sender;
+-(void)chooseDifficulty;
 
 - (void)didEndSheet:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo;
 
