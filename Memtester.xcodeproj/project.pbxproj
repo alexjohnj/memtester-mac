@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA4878BD15603A1D0040C5FF /* SCHighScoresSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4878BB15603A1D0040C5FF /* SCHighScoresSheetController.m */; };
+		FA4878BE15603A1D0040C5FF /* SCHighScoresSheetController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4878BC15603A1D0040C5FF /* SCHighScoresSheetController.xib */; };
 		FA4FAC641558509E0031B712 /* SCGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4FAC631558509E0031B712 /* SCGameView.xib */; };
 		FA6078B01557F7990006D971 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6078AF1557F7990006D971 /* Cocoa.framework */; };
 		FA6078BA1557F7990006D971 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA6078B81557F7990006D971 /* InfoPlist.strings */; };
@@ -25,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA4878BA15603A1D0040C5FF /* SCHighScoresSheetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCHighScoresSheetController.h; sourceTree = "<group>"; };
+		FA4878BB15603A1D0040C5FF /* SCHighScoresSheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCHighScoresSheetController.m; sourceTree = "<group>"; };
+		FA4878BC15603A1D0040C5FF /* SCHighScoresSheetController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SCHighScoresSheetController.xib; sourceTree = "<group>"; };
 		FA4FAC631558509E0031B712 /* SCGameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SCGameView.xib; sourceTree = "<group>"; };
 		FA6078AB1557F7990006D971 /* Memtester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memtester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6078AF1557F7990006D971 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -68,6 +73,7 @@
 		FA4878B51560374C0040C5FF /* Sheets */ = {
 			isa = PBXGroup;
 			children = (
+				FA4878BC15603A1D0040C5FF /* SCHighScoresSheetController.xib */,
 				FA7094DF155FE9FA00BA7F41 /* SCGameOverHighScoreSheet.xib */,
 				FA7094E2155FEB4C00BA7F41 /* SCGameOverLoserSheet.xib */,
 				FA7D01AC155860C80064FA29 /* SCDifficultyPickerWindow.xib */,
@@ -78,6 +84,8 @@
 		FA4878B7156037580040C5FF /* Sheet Window Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA4878BA15603A1D0040C5FF /* SCHighScoresSheetController.h */,
+				FA4878BB15603A1D0040C5FF /* SCHighScoresSheetController.m */,
 				FA7094E4155FECD400BA7F41 /* SCGameOverSheetController.h */,
 				FA7094E5155FECD400BA7F41 /* SCGameOverSheetController.m */,
 				FA7D01AA155860C80064FA29 /* SCDifficultyPickerWindowController.h */,
@@ -228,6 +236,7 @@
 				FA7D01B01558680D0064FA29 /* icon.icns in Resources */,
 				FA7094E0155FE9FA00BA7F41 /* SCGameOverHighScoreSheet.xib in Resources */,
 				FA7094E3155FEB4C00BA7F41 /* SCGameOverLoserSheet.xib in Resources */,
+				FA4878BE15603A1D0040C5FF /* SCHighScoresSheetController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +253,7 @@
 				FA6078D11557F7B70006D971 /* SCGameController.m in Sources */,
 				FA6078D41557F7C00006D971 /* SCGameData.m in Sources */,
 				FA7094E6155FECD400BA7F41 /* SCGameOverSheetController.m in Sources */,
+				FA4878BD15603A1D0040C5FF /* SCHighScoresSheetController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

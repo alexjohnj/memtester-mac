@@ -7,18 +7,18 @@
 //
 
 #import "SCDifficultyPickerWindowController.h"
-
-@interface SCDifficultyPickerWindowController ()
-
-@end
+#import "SCAppDelegate.h"
 
 @implementation SCDifficultyPickerWindowController
+
+@synthesize highScoresSheet;
 
 enum levelSelectionConstants{
 kEasyMode = 0,
 kMediumMode = 1,
 kHardMode = 2,
-kQuitApplication = 99
+kQuitApplication = 99,
+kShowHighScores = 98
 };
 
 - (id)initWithWindow:(NSWindow *)window
@@ -50,8 +50,15 @@ kQuitApplication = 99
     [NSApp endSheet:self.window returnCode:kHardMode];
 }
 
+- (IBAction)showHighScores:(id)sender{
+    [NSApp endSheet:self.window returnCode:kShowHighScores];
+}
+
 -(IBAction)quit:(id)sender{
     [NSApp endSheet:self.window returnCode:kQuitApplication];
+}
+
+- (void)sheetDidEnd:(NSWindow *)sheet resultCode:(NSInteger)resultCode contextInfo:(void *)contextInfo {
 }
 
 @end

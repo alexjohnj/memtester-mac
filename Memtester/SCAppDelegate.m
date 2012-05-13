@@ -16,12 +16,14 @@ static NSString * const hardModeHighScores = @"hardModeHighScores";
 @synthesize difficultyChooser = _levelChooser;
 @synthesize gameView;
 @synthesize gameViewController;
+@synthesize highScoresSheet;
 
 enum levelSelectionConstants{
 kEasyMode = 0,
 kMediumMode = 1,
 kHardMode = 2,
-kQuitApplication = 99
+kQuitApplication = 99,
+kShowHighScores = 98
 }; 
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -40,26 +42,49 @@ kQuitApplication = 99
           contextInfo:nil];
 }
 
+- (void)showHighScores{
+    if(!highScoresSheet)
+        highScoresSheet = [[SCHighScoresSheetController alloc] initWithWindowNibName:@"SCHighScoresSheetController"];
+    
+    [NSApp beginSheet:self.highScoresSheet.window
+       modalForWindow:[[NSApp delegate] window]
+        modalDelegate:self
+       didEndSelector:@selector(didEndSheet:returnCode:contextInfo:)
+          contextInfo:NULL];
+}
+
 -(IBAction)chooseNewDifficulty:(id)sender{
     [self chooseDifficulty];
 }
 
 - (void)didEndSheet:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo{
-    if(returnCode == kQuitApplication){
-        [sheet orderOut:self];
-        [NSApp terminate:self];
-    }
-    else{
-        self.gameViewController = nil;
-        self.gameViewController = [[SCGameController alloc] initWithNibName:@"SCGameView" bundle:[NSBundle mainBundle] difficultyLevel:returnCode];
-        if(self.gameView.subviews.count == 0){
-            [self.gameView addSubview:self.gameViewController.view];
-        }
-        else{
-            [self.gameView replaceSubview:[self.gameView.subviews objectAtIndex:0] with:self.gameViewController.view];
+    if(sheet == self.difficultyChooser.window){
+        if(returnCode == kQuitApplication){
+            [sheet orderOut:self];
+            [NSApp terminate:self];
         }
         
+        if (returnCode == kShowHighScores) {
+            [sheet orderOut:self];
+            [self showHighScores];
+        }
+        
+        else{
+            self.gameViewController = nil;
+            self.gameViewController = [[SCGameController alloc] initWithNibName:@"SCGameView" bundle:[NSBundle mainBundle] difficultyLevel:returnCode];
+            if(self.gameView.subviews.count == 0){
+                [self.gameView addSubview:self.gameViewController.view];
+            }
+            else{
+                [self.gameView replaceSubview:[self.gameView.subviews objectAtIndex:0] with:self.gameViewController.view];
+            }
+            
+            [sheet orderOut:self];
+        }
+    }
+    if(sheet == self.highScoresSheet.window){
         [sheet orderOut:self];
+        [self chooseDifficulty];
     }
 }
 
