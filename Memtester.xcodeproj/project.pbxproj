@@ -65,6 +65,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA4878B51560374C0040C5FF /* Sheets */ = {
+			isa = PBXGroup;
+			children = (
+				FA7094DF155FE9FA00BA7F41 /* SCGameOverHighScoreSheet.xib */,
+				FA7094E2155FEB4C00BA7F41 /* SCGameOverLoserSheet.xib */,
+				FA7D01AC155860C80064FA29 /* SCDifficultyPickerWindow.xib */,
+			);
+			name = Sheets;
+			sourceTree = "<group>";
+		};
+		FA4878B7156037580040C5FF /* Sheet Window Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA7094E4155FECD400BA7F41 /* SCGameOverSheetController.h */,
+				FA7094E5155FECD400BA7F41 /* SCGameOverSheetController.m */,
+				FA7D01AA155860C80064FA29 /* SCDifficultyPickerWindowController.h */,
+				FA7D01AB155860C80064FA29 /* SCDifficultyPickerWindowController.m */,
+			);
+			name = "Sheet Window Controllers";
+			sourceTree = "<group>";
+		};
+		FA4878B8156037720040C5FF /* Model-Like Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FA6078D21557F7C00006D971 /* SCGameData.h */,
+				FA6078D31557F7C00006D971 /* SCGameData.m */,
+			);
+			name = "Model-Like Classes";
+			sourceTree = "<group>";
+		};
+		FA4878B91560378F0040C5FF /* Game Windows/Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA4FAC631558509E0031B712 /* SCGameView.xib */,
+				FA6078C41557F7990006D971 /* MainMenu.xib */,
+			);
+			name = "Game Windows/Views";
+			sourceTree = "<group>";
+		};
 		FA6078A01557F7990006D971 = {
 			isa = PBXGroup;
 			children = (
@@ -104,21 +143,14 @@
 		FA6078B51557F7990006D971 /* Memtester */ = {
 			isa = PBXGroup;
 			children = (
-				FA7094DF155FE9FA00BA7F41 /* SCGameOverHighScoreSheet.xib */,
-				FA7094E2155FEB4C00BA7F41 /* SCGameOverLoserSheet.xib */,
-				FA7094E4155FECD400BA7F41 /* SCGameOverSheetController.h */,
-				FA7094E5155FECD400BA7F41 /* SCGameOverSheetController.m */,
-				FA7D01AA155860C80064FA29 /* SCDifficultyPickerWindowController.h */,
-				FA7D01AB155860C80064FA29 /* SCDifficultyPickerWindowController.m */,
-				FA7D01AC155860C80064FA29 /* SCDifficultyPickerWindow.xib */,
-				FA4FAC631558509E0031B712 /* SCGameView.xib */,
+				FA4878B51560374C0040C5FF /* Sheets */,
+				FA4878B7156037580040C5FF /* Sheet Window Controllers */,
+				FA4878B91560378F0040C5FF /* Game Windows/Views */,
 				FA6078C11557F7990006D971 /* SCAppDelegate.h */,
 				FA6078C21557F7990006D971 /* SCAppDelegate.m */,
 				FA6078CF1557F7B70006D971 /* SCGameController.h */,
 				FA6078D01557F7B70006D971 /* SCGameController.m */,
-				FA6078C41557F7990006D971 /* MainMenu.xib */,
-				FA6078D21557F7C00006D971 /* SCGameData.h */,
-				FA6078D31557F7C00006D971 /* SCGameData.m */,
+				FA4878B8156037720040C5FF /* Model-Like Classes */,
 				FA6078B61557F7990006D971 /* Supporting Files */,
 			);
 			path = Memtester;
