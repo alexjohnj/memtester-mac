@@ -5,11 +5,24 @@
 //  Created by Alex Jackson on 07/05/2012.
 
 #import "SCGameController.h"
+#import "SCAppDelegate.h"
+
+static NSString * const easyModeHighScores = @"easyModeHighScores";
+static NSString * const mediumModeHighScores = @"mediumModeHighScores";
+static NSString * const hardModeHighScores = @"hardModeHighScores";
 
 @implementation SCGameController
+
 @synthesize scoreField, itemsGuessField, itemsToGuessField, itemField, submitItemButton, displayItemsTimer, displayItemsTimerCount, difficulty;
 @synthesize currentGame;
 @synthesize cheatButton1, cheatButton2, cheatButton3;
+@synthesize gameOverSheet;
+
+enum sheetDismissalCode{
+kNewGame = 0,
+kMainMenu = 1,
+kQuitGame = 2
+};
 
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil difficultyLevel:(int)level{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -95,26 +108,81 @@
         [self getNewItem];
     }
     else{
-        NSAlert *gameOverAlert = [NSAlert alertWithMessageText:@"Game Over :("
-                                                 defaultButton:@"Try Again"
-                                               alternateButton:@"Quit"
-                                                   otherButton:nil
-                                     informativeTextWithFormat:[NSString stringWithFormat:@"That wasn't quite right.\n Your score: %d", self.currentGame.score]];
-        [gameOverAlert beginSheetModalForWindow:[[NSApp delegate]window]
-                                  modalDelegate:self
-                                 didEndSelector:@selector(sheetDidEnd:resultCode:contextInfo:)
-                                    contextInfo:NULL];
+        BOOL highScore = [self checkForHighScore];
+        if(highScore == YES){
+            self.gameOverSheet = nil;
+            self.gameOverSheet = [[SCGameOverSheetController alloc] initWithWindowNibName:@"SCGameOverHighScoreSheet" score:self.currentGame.score isHighScore:YES difficulty:self.currentGame.difficulty];
+        }
+        else{
+            self.gameOverSheet = nil;
+            self.gameOverSheet = [[SCGameOverSheetController alloc] initWithWindowNibName:@"SCGameOverLoserSheet" score:self.currentGame.score isHighScore:NO difficulty:self.currentGame.difficulty];
+        }
+        [NSApp beginSheet:self.gameOverSheet.window
+           modalForWindow:[[NSApp delegate] window]
+            modalDelegate:self
+           didEndSelector:@selector(sheetDidEnd:resultCode:contextInfo:)
+              contextInfo:NULL];
     }
+}
+
+- (BOOL)checkForHighScore{
+    NSArray *highScores;
+    if(self.difficulty == 0)
+        highScores = [[NSUserDefaults standardUserDefaults] arrayForKey:easyModeHighScores];
+    else if(self.difficulty == 1)
+        highScores = [[NSUserDefaults standardUserDefaults] arrayForKey:mediumModeHighScores];
+    else if(self.difficulty == 2)
+        highScores = [[NSUserDefaults standardUserDefaults] arrayForKey:hardModeHighScores];
+    
+    if(highScores.count < 10)
+        return YES;
+                      
+    NSMutableArray *sortedScores = [[highScores sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+            if([[obj1 valueForKey:@"score"] integerValue] > [[obj2 valueForKey:@"score"] integerValue])
+                return (NSComparisonResult)NSOrderedAscending; //yeah, I know this is the wrong way around. The array's easier to work with if it's reversed though, so using NSOrderedAscending will give me that reversed array easily. 
+            
+            if([[obj1 valueForKey:@"score"] integerValue] < [[obj2 valueForKey:@"score"] integerValue])
+                return (NSComparisonResult)NSOrderedDescending;
+            
+            return NSOrderedSame;
+
+        }] mutableCopy];
+    
+    NSLog(@"Unsorted:%@\n Sorted:%@" ,highScores, sortedScores);
+    
+    if(self.currentGame.score > [[[sortedScores objectAtIndex:(sortedScores.count - 1)] valueForKey:@"score"] integerValue]){
+        [sortedScores removeObjectAtIndex:(sortedScores.count - 1)];
+        if(self.difficulty == 0)
+            [[NSUserDefaults standardUserDefaults] setValue:[sortedScores copy] forKey:easyModeHighScores];
+        else if(self.difficulty == 1)
+            [[NSUserDefaults standardUserDefaults] setValue:[sortedScores copy] forKey:mediumModeHighScores];
+        else if(self.difficulty == 2)
+            [[NSUserDefaults standardUserDefaults] setValue:[sortedScores copy] forKey:hardModeHighScores];
+        
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        return YES;
+    }
+    else
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        return NO;
+    
 }
 
 - (void)sheetDidEnd:(NSWindow *)sheet resultCode:(NSInteger)resultCode contextInfo:(void *)contextInfo {
 	switch (resultCode) {
-        case NSAlertDefaultReturn:
+        case kNewGame:
+            [sheet orderOut:self];
             [self startNewGame];
             break;
             
-        default:
+        case kQuitGame:
+            [sheet orderOut:self];
             [NSApp terminate:self];
+            break;
+        case kMainMenu:
+            [sheet orderOut:self];
+            SCAppDelegate *appDelegate = (SCAppDelegate *)[NSApp delegate];
+            [appDelegate chooseDifficulty];
             break;
     }
 }

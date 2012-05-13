@@ -6,6 +6,10 @@
 
 #import "SCAppDelegate.h"
 
+static NSString * const easyModeHighScores = @"easyModeHighScores";
+static NSString * const mediumModeHighScores = @"mediumModeHighScores";
+static NSString * const hardModeHighScores = @"hardModeHighScores";
+
 @implementation SCAppDelegate
 
 @synthesize window = _window;
@@ -61,6 +65,23 @@ kQuitApplication = 99
 
 -(BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender{
     return YES;
+}
+
++(void)initialize{
+    NSArray *easyModeScores = [[NSArray alloc] init];
+    NSArray *mediumModeScores = [[NSArray alloc] init];
+    NSArray *hardModeScores = [[NSArray alloc] init];
+    
+    NSString *easyModeScoresKey = @"easyModeScores";
+    NSString *mediumModeScoresKey = @"mediumModeScores";
+    NSString *hardModeScoresKey = @"hardModeScoresKey";
+    
+    NSArray *defaultsValues = [NSArray arrayWithObjects:easyModeScores, mediumModeScores, hardModeScores, nil];
+    NSArray *defaultsKeys = [NSArray arrayWithObjects:easyModeScoresKey, mediumModeScoresKey, hardModeScoresKey, nil];
+    
+    NSDictionary *defaults = [NSDictionary dictionaryWithObjects:defaultsValues forKeys:defaultsKeys];
+    
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 }
 
 @end

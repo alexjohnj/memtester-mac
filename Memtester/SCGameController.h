@@ -6,6 +6,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SCGameData.h"
+#import "SCGameOverSheetController.h"
 
 @interface SCGameController : NSViewController
 
@@ -22,9 +23,12 @@
 @property (assign) int difficulty;
 @property (strong) SCGameData *currentGame;
 
+@property (strong) SCGameOverSheetController *gameOverSheet;
+
 // These iVars are for keeping track of the time between each item being displayed.
 @property (strong) NSTimer *displayItemsTimer;
 @property (assign) int displayItemsTimerCount;
+
 
 - (IBAction)submitNextItem:(id)sender;
 - (IBAction)cheat:(id)sender;
@@ -34,6 +38,8 @@
 - (void)displayItems;
 
 - (void)checkEnteredItems;
+
+-(BOOL)checkForHighScore;
 
 - (void)sheetDidEnd:(NSWindow *)sheet resultCode:(NSInteger)resultCode contextInfo:(void *)contextInfo;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil difficultyLevel:(int)level;

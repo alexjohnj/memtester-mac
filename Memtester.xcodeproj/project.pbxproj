@@ -16,6 +16,9 @@
 		FA6078C61557F7990006D971 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6078C41557F7990006D971 /* MainMenu.xib */; };
 		FA6078D11557F7B70006D971 /* SCGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6078D01557F7B70006D971 /* SCGameController.m */; };
 		FA6078D41557F7C00006D971 /* SCGameData.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6078D31557F7C00006D971 /* SCGameData.m */; };
+		FA7094E0155FE9FA00BA7F41 /* SCGameOverHighScoreSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7094DF155FE9FA00BA7F41 /* SCGameOverHighScoreSheet.xib */; };
+		FA7094E3155FEB4C00BA7F41 /* SCGameOverLoserSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7094E2155FEB4C00BA7F41 /* SCGameOverLoserSheet.xib */; };
+		FA7094E6155FECD400BA7F41 /* SCGameOverSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7094E5155FECD400BA7F41 /* SCGameOverSheetController.m */; };
 		FA7D01AD155862E70064FA29 /* SCDifficultyPickerWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7D01AB155860C80064FA29 /* SCDifficultyPickerWindowController.m */; };
 		FA7D01AE155863000064FA29 /* SCDifficultyPickerWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7D01AC155860C80064FA29 /* SCDifficultyPickerWindow.xib */; };
 		FA7D01B01558680D0064FA29 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = FA7D01AF1558680D0064FA29 /* icon.icns */; };
@@ -40,6 +43,10 @@
 		FA6078D01557F7B70006D971 /* SCGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGameController.m; sourceTree = "<group>"; };
 		FA6078D21557F7C00006D971 /* SCGameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGameData.h; sourceTree = "<group>"; };
 		FA6078D31557F7C00006D971 /* SCGameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGameData.m; sourceTree = "<group>"; };
+		FA7094DF155FE9FA00BA7F41 /* SCGameOverHighScoreSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SCGameOverHighScoreSheet.xib; sourceTree = "<group>"; };
+		FA7094E2155FEB4C00BA7F41 /* SCGameOverLoserSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SCGameOverLoserSheet.xib; sourceTree = "<group>"; };
+		FA7094E4155FECD400BA7F41 /* SCGameOverSheetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGameOverSheetController.h; sourceTree = "<group>"; };
+		FA7094E5155FECD400BA7F41 /* SCGameOverSheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGameOverSheetController.m; sourceTree = "<group>"; };
 		FA7D01AA155860C80064FA29 /* SCDifficultyPickerWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCDifficultyPickerWindowController.h; sourceTree = "<group>"; };
 		FA7D01AB155860C80064FA29 /* SCDifficultyPickerWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCDifficultyPickerWindowController.m; sourceTree = "<group>"; };
 		FA7D01AC155860C80064FA29 /* SCDifficultyPickerWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SCDifficultyPickerWindow.xib; sourceTree = "<group>"; };
@@ -97,6 +104,10 @@
 		FA6078B51557F7990006D971 /* Memtester */ = {
 			isa = PBXGroup;
 			children = (
+				FA7094DF155FE9FA00BA7F41 /* SCGameOverHighScoreSheet.xib */,
+				FA7094E2155FEB4C00BA7F41 /* SCGameOverLoserSheet.xib */,
+				FA7094E4155FECD400BA7F41 /* SCGameOverSheetController.h */,
+				FA7094E5155FECD400BA7F41 /* SCGameOverSheetController.m */,
 				FA7D01AA155860C80064FA29 /* SCDifficultyPickerWindowController.h */,
 				FA7D01AB155860C80064FA29 /* SCDifficultyPickerWindowController.m */,
 				FA7D01AC155860C80064FA29 /* SCDifficultyPickerWindow.xib */,
@@ -183,6 +194,8 @@
 				FA6078C61557F7990006D971 /* MainMenu.xib in Resources */,
 				FA4FAC641558509E0031B712 /* SCGameView.xib in Resources */,
 				FA7D01B01558680D0064FA29 /* icon.icns in Resources */,
+				FA7094E0155FE9FA00BA7F41 /* SCGameOverHighScoreSheet.xib in Resources */,
+				FA7094E3155FEB4C00BA7F41 /* SCGameOverLoserSheet.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +211,7 @@
 				FA6078C31557F7990006D971 /* SCAppDelegate.m in Sources */,
 				FA6078D11557F7B70006D971 /* SCGameController.m in Sources */,
 				FA6078D41557F7C00006D971 /* SCGameData.m in Sources */,
+				FA7094E6155FECD400BA7F41 /* SCGameOverSheetController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
