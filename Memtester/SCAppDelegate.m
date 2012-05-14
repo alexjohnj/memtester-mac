@@ -70,6 +70,7 @@ kShowHighScores = 98
         }
         
         else{
+            [self.gameViewController.displayItemsTimer invalidate];
             self.gameViewController = nil;
             self.gameViewController = [[SCGameController alloc] initWithNibName:@"SCGameView" bundle:[NSBundle mainBundle] difficultyLevel:returnCode];
             if(self.gameView.subviews.count == 0){
