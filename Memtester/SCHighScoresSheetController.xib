@@ -69,7 +69,7 @@
 											<string key="NSFrameSize">{438, 190}</string>
 											<reference key="NSSuperview" ref="1015210674"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="163587920"/>
+											<reference key="NSNextKeyView" ref="536197421"/>
 											<string key="NSReuseIdentifierKey">_NS:13</string>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSTableHeaderView" key="NSHeaderView" id="357643580">
@@ -144,7 +144,6 @@
 															<reference key="NSColor" ref="542349227"/>
 														</object>
 													</object>
-													<bool key="NSIsEditable">YES</bool>
 													<reference key="NSTableView" ref="633378018"/>
 												</object>
 												<object class="NSTableColumn" id="502272301">
@@ -169,7 +168,6 @@
 														<reference key="NSBackgroundColor" ref="1046833927"/>
 														<reference key="NSTextColor" ref="474358650"/>
 													</object>
-													<bool key="NSIsEditable">YES</bool>
 													<reference key="NSTableView" ref="633378018"/>
 												</object>
 											</array>
@@ -196,7 +194,7 @@
 											<int key="NSDraggingSourceMaskForLocal">15</int>
 											<int key="NSDraggingSourceMaskForNonLocal">0</int>
 											<bool key="NSAllowsTypeSelect">YES</bool>
-											<int key="NSTableViewDraggingDestinationStyle">0</int>
+											<int key="NSTableViewDraggingDestinationStyle">1</int>
 											<int key="NSTableViewGroupRowStyle">1</int>
 										</object>
 									</array>
@@ -254,7 +252,7 @@
 							<string key="NSFrame">{{20, 71}, {440, 208}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="536197421"/>
+							<reference key="NSNextKeyView" ref="1015210674"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<int key="NSsFlags">133682</int>
 							<reference key="NSVScroller" ref="163587920"/>
@@ -321,7 +319,6 @@
 							<string key="NSFrame">{{279, 32}, {44, 17}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="904821278">
