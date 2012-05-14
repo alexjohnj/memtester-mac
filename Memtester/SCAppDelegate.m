@@ -39,7 +39,7 @@ kShowHighScores = 98
        modalForWindow:[[NSApp delegate] window]
         modalDelegate:self
        didEndSelector:@selector(didEndSheet:returnCode:contextInfo:)
-          contextInfo:nil];
+          contextInfo:NULL];
 }
 
 - (void)showHighScores{
