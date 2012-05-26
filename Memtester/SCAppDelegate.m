@@ -43,6 +43,9 @@ kShowHighScores = 98
 }
 
 - (void)showHighScores{
+    if(highScoresSheet)
+        [self.highScoresSheet.scoresTable reloadData];
+    
     if(!highScoresSheet)
         highScoresSheet = [[SCHighScoresSheetController alloc] initWithWindowNibName:@"SCHighScoresSheetController"];
     
