@@ -7,6 +7,7 @@
 #import <Foundation/Foundation.h>
 #import "SCGameData.h"
 #import "SCGameOverSheetController.h"
+#import "SCHighScoresController.h"
 
 @interface SCGameController : NSViewController
 

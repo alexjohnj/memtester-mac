@@ -77,42 +77,46 @@ static NSString * const hardModeHighScores = @"hardModeHighScores";
 #pragma mark - TableView Datasource Methods
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView{
-    NSArray *highScoresArray;
+    SCHighScoresController *highScoresController = [[SCHighScoresController alloc] init];
+    
+    NSArray *currentDifficultysHighScores;
     if(self.easyScoresButton.state == NSOnState){
-        highScoresArray = [[NSUserDefaults standardUserDefaults] arrayForKey:easyModeHighScores];
+        currentDifficultysHighScores = [highScoresController.highScores valueForKey:easyModeHighScores];
     }
     
     else if(self.mediumScoresButton.state == NSOnState){
-        highScoresArray = [[NSUserDefaults standardUserDefaults] arrayForKey:mediumModeHighScores];
+        currentDifficultysHighScores = [highScoresController.highScores valueForKey:mediumModeHighScores];
     }
     
     else if(self.hardScoresButton.state == NSOnState){
-        highScoresArray = [[NSUserDefaults standardUserDefaults] arrayForKey:hardModeHighScores];
+        currentDifficultysHighScores = [highScoresController.highScores valueForKey:hardModeHighScores];
     }
     
-    return highScoresArray.count;
+    return currentDifficultysHighScores.count;
     
 }
 
 - (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex{
-    NSArray *highScoresArray;
+    SCHighScoresController *highScoresController = [[SCHighScoresController alloc] init];
+    
+    NSArray *currentDifficultysHighScores;
     if(self.easyScoresButton.state == NSOnState){
-       highScoresArray = [[NSUserDefaults standardUserDefaults] arrayForKey:easyModeHighScores];
+        currentDifficultysHighScores = [highScoresController.highScores valueForKey:easyModeHighScores];
     }
     
     else if(self.mediumScoresButton.state == NSOnState){
-         highScoresArray = [[NSUserDefaults standardUserDefaults] arrayForKey:mediumModeHighScores];
+        currentDifficultysHighScores = [highScoresController.highScores valueForKey:mediumModeHighScores];
     }
     
     else if(self.hardScoresButton.state == NSOnState){
-         highScoresArray = [[NSUserDefaults standardUserDefaults] arrayForKey:hardModeHighScores];
+        currentDifficultysHighScores = [highScoresController.highScores valueForKey:hardModeHighScores];
     }
     
     else{
         return nil;
     }
     
-    NSArray *sortedScores = [highScoresArray sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+    NSArray *sortedScores = [currentDifficultysHighScores sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         if([[obj1 valueForKey:@"score"] integerValue] > [[obj2 valueForKey:@"score"] integerValue])
             return (NSComparisonResult)NSOrderedAscending; //yeah, I know this is the wrong way around. The array's easier to work with if it's reversed though, so using NSOrderedAscending will give me that reversed array easily. 
         

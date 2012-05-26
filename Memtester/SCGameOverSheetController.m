@@ -44,18 +44,18 @@ kQuitGame = 2
 }
 
 - (void)saveHighScore{
-    NSMutableArray *highScores;
-    if(self.difficulty == 0)
-        highScores = [[[NSUserDefaults standardUserDefaults] arrayForKey:easyModeHighScores] mutableCopy];
-    else if(self.difficulty == 1)
-        highScores = [[[NSUserDefaults standardUserDefaults] arrayForKey:mediumModeHighScores] mutableCopy];
-    else if(self.difficulty == 2)
-        highScores = [[[NSUserDefaults standardUserDefaults] arrayForKey:hardModeHighScores] mutableCopy];
-    else
-        highScores = nil;
+    SCHighScoresController *highScoresController = [[SCHighScoresController alloc] init];
     
-    if(highScores == nil){
-        highScores = [[NSMutableArray alloc] init];
+    NSMutableArray *currentDifficultysHighScores;
+    if(self.difficulty == 0)
+        currentDifficultysHighScores = [highScoresController.highScores valueForKey:easyModeHighScores];
+    else if(self.difficulty == 1)
+        currentDifficultysHighScores = [highScoresController.highScores valueForKey:mediumModeHighScores];
+    else if(self.difficulty == 2)
+        currentDifficultysHighScores = [highScoresController.highScores valueForKey:hardModeHighScores];
+    
+    if(currentDifficultysHighScores == nil){
+        currentDifficultysHighScores = [[NSMutableArray alloc] init];
     }
     
     NSString *userName = self.nameField.stringValue;
@@ -66,16 +66,16 @@ kQuitGame = 2
     [scoreEntry setValue:userName forKey:@"name"];
     [scoreEntry setValue:[NSNumber numberWithInt:self.score] forKey:@"score"];
     
-    [highScores addObject:scoreEntry];
+    [currentDifficultysHighScores addObject:scoreEntry];
    
     if(self.difficulty == 0)
-        [[NSUserDefaults standardUserDefaults] setValue:[highScores copy] forKey:easyModeHighScores];
+        [highScoresController.highScores setValue:[currentDifficultysHighScores copy] forKey:easyModeHighScores];
     else if(self.difficulty == 1)
-        [[NSUserDefaults standardUserDefaults] setValue:[highScores copy] forKey:mediumModeHighScores];
+        [highScoresController.highScores setValue:[currentDifficultysHighScores copy] forKey:mediumModeHighScores];
     else if(self.difficulty == 2)
-        [[NSUserDefaults standardUserDefaults] setValue:[highScores copy] forKey:hardModeHighScores];
+        [highScoresController.highScores setValue:[currentDifficultysHighScores copy] forKey:hardModeHighScores];
     
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [highScoresController saveNewHighScoresFile];
 }
 
 - (IBAction)quitGame:(id)sender{

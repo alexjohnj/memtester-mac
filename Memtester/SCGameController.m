@@ -126,18 +126,25 @@ kQuitGame = 2
 }
 
 - (BOOL)checkForHighScore{
-    NSArray *highScores;
-    if(self.difficulty == 0)
-        highScores = [[NSUserDefaults standardUserDefaults] arrayForKey:easyModeHighScores];
-    else if(self.difficulty == 1)
-        highScores = [[NSUserDefaults standardUserDefaults] arrayForKey:mediumModeHighScores];
-    else if(self.difficulty == 2)
-        highScores = [[NSUserDefaults standardUserDefaults] arrayForKey:hardModeHighScores];
+    SCHighScoresController *highScoresController = [[SCHighScoresController alloc] init];
     
-    if(highScores.count < 10)
+    if(highScoresController == nil){
+        NSLog(@"Couldn't make/find a high scores file");
+        return NO;
+    }
+    
+    NSArray *currentDifficultysHighScores;
+    if(self.difficulty == 0)
+        currentDifficultysHighScores = [highScoresController.highScores valueForKey:easyModeHighScores];
+    else if(self.difficulty == 1)
+        currentDifficultysHighScores = [highScoresController.highScores valueForKey:mediumModeHighScores];
+    else if(self.difficulty == 2)
+        currentDifficultysHighScores = [highScoresController.highScores valueForKey:hardModeHighScores];
+    
+    if(currentDifficultysHighScores.count < 10)
         return YES;
                       
-    NSMutableArray *sortedScores = [[highScores sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+    NSMutableArray *sortedScores = [[currentDifficultysHighScores sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
             if([[obj1 valueForKey:@"score"] integerValue] > [[obj2 valueForKey:@"score"] integerValue])
                 return (NSComparisonResult)NSOrderedAscending; //yeah, I know this is the wrong way around. The array's easier to work with if it's reversed though, so using NSOrderedAscending will give me that reversed array easily. 
             
@@ -148,22 +155,22 @@ kQuitGame = 2
 
         }] mutableCopy];
     
-    NSLog(@"Unsorted:%@\n Sorted:%@" ,highScores, sortedScores);
+    NSLog(@"Unsorted:%@\n Sorted:%@" ,currentDifficultysHighScores, sortedScores);
     
     if(self.currentGame.score > [[[sortedScores objectAtIndex:(sortedScores.count - 1)] valueForKey:@"score"] integerValue]){
         [sortedScores removeObjectAtIndex:(sortedScores.count - 1)];
         if(self.difficulty == 0)
-            [[NSUserDefaults standardUserDefaults] setValue:[sortedScores copy] forKey:easyModeHighScores];
+            [highScoresController.highScores setValue:[easyModeHighScores copy] forKey:easyModeHighScores];
         else if(self.difficulty == 1)
-            [[NSUserDefaults standardUserDefaults] setValue:[sortedScores copy] forKey:mediumModeHighScores];
+            [highScoresController.highScores setValue:[mediumModeHighScores copy] forKey:mediumModeHighScores];
         else if(self.difficulty == 2)
-            [[NSUserDefaults standardUserDefaults] setValue:[sortedScores copy] forKey:hardModeHighScores];
+            [highScoresController.highScores setValue:[mediumModeHighScores copy] forKey:mediumModeHighScores];
         
-        [[NSUserDefaults standardUserDefaults] synchronize];
+        [highScoresController saveNewHighScoresFile];
         return YES;
     }
     else
-        [[NSUserDefaults standardUserDefaults] synchronize];
+        [highScoresController saveNewHighScoresFile];
         return NO;
     
 }
