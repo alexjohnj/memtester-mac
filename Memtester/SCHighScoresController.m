@@ -20,7 +20,7 @@
         }
         
         NSString *plistPath = [[NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDirectory, YES) objectAtIndex:0] stringByAppendingPathComponent:@"MemTester/Scores.plist"];
-        _highScores = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+        _highScores = [NSMutableDictionary dictionaryWithContentsOfFile:plistPath];
     }
     
     return self;
@@ -54,9 +54,9 @@
     NSArray *mediumModeScores = [[NSArray alloc] init];
     NSArray *hardModeScores = [[NSArray alloc] init];
     
-    NSString *easyModeScoresKey = @"easyModeScores";
-    NSString *mediumModeScoresKey = @"mediumModeScores";
-    NSString *hardModeScoresKey = @"hardModeScoresKey";
+    NSString *easyModeScoresKey = @"easyModeHighScores";
+    NSString *mediumModeScoresKey = @"mediumModeHighScores";
+    NSString *hardModeScoresKey = @"hardModeHighScores";
     
     NSArray *highScores = [NSArray arrayWithObjects:easyModeScores, mediumModeScores, hardModeScores, nil];
     NSArray *highScoresKeys = [NSArray arrayWithObjects:easyModeScoresKey, mediumModeScoresKey, hardModeScoresKey, nil];

@@ -160,11 +160,11 @@ kQuitGame = 2
     if(self.currentGame.score > [[[sortedScores objectAtIndex:(sortedScores.count - 1)] valueForKey:@"score"] integerValue]){
         [sortedScores removeObjectAtIndex:(sortedScores.count - 1)];
         if(self.difficulty == 0)
-            [highScoresController.highScores setValue:[easyModeHighScores copy] forKey:easyModeHighScores];
+            [highScoresController.highScores setValue:[sortedScores copy] forKey:easyModeHighScores];
         else if(self.difficulty == 1)
-            [highScoresController.highScores setValue:[mediumModeHighScores copy] forKey:mediumModeHighScores];
+            [highScoresController.highScores setValue:[sortedScores copy] forKey:mediumModeHighScores];
         else if(self.difficulty == 2)
-            [highScoresController.highScores setValue:[mediumModeHighScores copy] forKey:mediumModeHighScores];
+            [highScoresController.highScores setValue:[sortedScores copy] forKey:mediumModeHighScores];
         
         [highScoresController saveNewHighScores];
         return YES;
