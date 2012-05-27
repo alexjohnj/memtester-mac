@@ -13,6 +13,6 @@
 
 - (BOOL)checkHighScoresFileExists;
 - (BOOL)createHighScoresFile;
-- (void)saveNewHighScoresFile;
+- (void)saveNewHighScores;
 
 @end

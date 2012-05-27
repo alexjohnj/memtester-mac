@@ -75,7 +75,7 @@ kQuitGame = 2
     else if(self.difficulty == 2)
         [highScoresController.highScores setValue:[currentDifficultysHighScores copy] forKey:hardModeHighScores];
     
-    [highScoresController saveNewHighScoresFile];
+    [highScoresController saveNewHighScores];
 }
 
 - (IBAction)quitGame:(id)sender{

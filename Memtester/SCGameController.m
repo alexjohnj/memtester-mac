@@ -166,11 +166,11 @@ kQuitGame = 2
         else if(self.difficulty == 2)
             [highScoresController.highScores setValue:[mediumModeHighScores copy] forKey:mediumModeHighScores];
         
-        [highScoresController saveNewHighScoresFile];
+        [highScoresController saveNewHighScores];
         return YES;
     }
     else
-        [highScoresController saveNewHighScoresFile];
+        [highScoresController saveNewHighScores];
         return NO;
     
 }

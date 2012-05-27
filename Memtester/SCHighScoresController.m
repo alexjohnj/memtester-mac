@@ -19,7 +19,7 @@
             return nil;
         }
         
-        NSString *plistPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDirectory, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Scores.plist"];
+        NSString *plistPath = [[NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDirectory, YES) objectAtIndex:0] stringByAppendingPathComponent:@"MemTester/Scores.plist"];
         _highScores = [NSDictionary dictionaryWithContentsOfFile:plistPath];
     }
     
@@ -28,7 +28,7 @@
 
 - (BOOL)checkHighScoresFileExists{
     NSFileManager *fManager = [[NSFileManager alloc] init];
-    NSString *plistPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDirectory, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Scores.plist"];
+    NSString *plistPath = [[NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDirectory, YES) objectAtIndex:0] stringByAppendingPathComponent:@"MemTester/Scores.plist"];
     
     if([fManager fileExistsAtPath:plistPath])
         return YES;
@@ -37,7 +37,18 @@
 }
 
 - (BOOL)createHighScoresFile{
-    NSString *plistPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDirectory, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Scores.plist"];
+    NSString *plistPath = [[NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDirectory, YES) objectAtIndex:0] stringByAppendingPathComponent:@"MemTester/Scores.plist"];
+    NSString *applicationSupportPath = [[NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDirectory, YES) objectAtIndex:0] stringByAppendingPathComponent:@"MemTester"];
+    
+    NSFileManager *fManager = [[NSFileManager alloc] init];
+    
+    if(![fManager fileExistsAtPath:applicationSupportPath]){
+        NSError *applicationSupportDirectoryCreationError;
+        if(![fManager createDirectoryAtPath:applicationSupportPath withIntermediateDirectories:NO attributes:nil error:&applicationSupportDirectoryCreationError]){
+            NSLog(@"Could not create an application support folder: %@", [applicationSupportDirectoryCreationError localizedDescription]);
+            return NO;
+        }
+    }
     
     NSArray *easyModeScores = [[NSArray alloc] init];
     NSArray *mediumModeScores = [[NSArray alloc] init];
@@ -58,8 +69,8 @@
         return NO;
 }
 
-- (void)saveNewHighScoresFile{
-    NSString *plistPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDirectory, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Scores.plist"];
+- (void)saveNewHighScores{
+    NSString *plistPath = [[NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDirectory, YES) objectAtIndex:0] stringByAppendingPathComponent:@"MemTester/Scores.plist"];
     
     if(![self.highScores writeToFile:plistPath atomically:YES]){
         NSLog(@"Failed to save new high scores plist");
