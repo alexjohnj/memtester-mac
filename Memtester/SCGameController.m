@@ -105,7 +105,9 @@ kQuitGame = 2
 }
 
 - (void)checkEnteredItems{
+    [self.scoreField setAlphaValue:0.0];
     BOOL correct = [self.currentGame checkSubmittedItems];
+    [self.scoreField.animator setAlphaValue:1.0];
     if(correct){
         [self getNewItem];
     }
