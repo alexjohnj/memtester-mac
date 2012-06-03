@@ -20,7 +20,6 @@
 @property (weak) IBOutlet NSButton *cheatButton2;
 @property (weak) IBOutlet NSButton *cheatButton3;
 
-
 @property (assign) int difficulty;
 @property (strong) SCGameData *currentGame;
 
@@ -29,7 +28,6 @@
 // These iVars are for keeping track of the time between each item being displayed.
 @property (strong) NSTimer *displayItemsTimer;
 @property (assign) int displayItemsTimerCount;
-
 
 - (IBAction)submitNextItem:(id)sender;
 - (IBAction)cheat:(id)sender;
@@ -40,7 +38,7 @@
 
 - (void)checkEnteredItems;
 
--(BOOL)checkForHighScore;
+- (BOOL)checkForHighScore;
 
 - (void)sheetDidEnd:(NSWindow *)sheet resultCode:(NSInteger)resultCode contextInfo:(void *)contextInfo;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil difficultyLevel:(int)level;

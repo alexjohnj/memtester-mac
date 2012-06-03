@@ -67,7 +67,7 @@ kQuitGame = 2
     [self.currentGame generateNewItem];
     self.displayItemsTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
                                                               target:self
-                                                            selector:@selector(displayItems)
+                                                            selector:@selector(displayItem)
                                                             userInfo:nil
                                                              repeats:YES];
     self.displayItemsTimerCount = 0;
@@ -76,20 +76,22 @@ kQuitGame = 2
     [self.displayItemsTimer fire];
 }
 
-- (void)displayItems{
+- (void)displayItem{
+    [self.itemField setAlphaValue:0.0];
     if(self.displayItemsTimerCount > self.currentGame.generatedItems.count - 1){
         [self.displayItemsTimer invalidate];
         self.displayItemsTimer = nil;
         [self.submitItemButton setEnabled:YES];
         [self.itemsGuessField setEnabled:YES];
         [self.itemField setStringValue:@""];
+        [[self.itemField animator] setAlphaValue:1.0];
         [[[NSApp delegate] window] makeFirstResponder:self.itemsGuessField];
         return;
     }
     
     NSString *currentItem = [self.currentGame.generatedItems objectAtIndex:self.displayItemsTimerCount];
     [self.itemField setStringValue:currentItem];
-    
+    [[self.itemField animator] setAlphaValue:1.0];
     
     self.displayItemsTimerCount++;
 }
