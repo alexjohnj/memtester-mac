@@ -4,11 +4,11 @@ It's a native Cocoa port of a game a friend of mine made a while ago. The game w
 
 ## What's completed in MemTester - Mac?
 
-**The basics**. The game is playable. You can try out the varying difficulties and remember stuff. There's a few things that are in the original that aren't in the current version. High score saving hasn't been implemented. Won't be too hard to do, just haven't got around to it. The cheat mode hasn't been implemented in the user interface. All the code for it exists, I just haven't thought of a nice way of integrating it into the the user interface yet. 
+Most of the features of the original Java version are now available in MemTester - Mac. An easy, medium & hard difficulty is available and high score saving has been implemented, complete with a high scores table (of course). The only feature which hasn't been implemented is a cheat mode, simply because I haven't found a nice way to integrate it with the user interface (all the code is there though). 
 
-MemTester - Mac differs a little bit to the Java version. In easy mode in the Java version, you press buttons correlating to the numbers you had to remember. The buttons light up in red too. In the native Mac version, you instead type out the numbers you need to remember. It's not as pug ugly as an array of red flashing buttons. 
+MemTester - Mac has started to differ a bit from the original Java version and there's quite a few things that MemTester - Mac does differently. 
 
-## Where's The Original Version of MemTester
+## Where's The Original Version of MemTester?
 
 My friend has it on a GoogleCode page. There's a desktop version (that needs Java) and an Android version too. There's also source code.
 
