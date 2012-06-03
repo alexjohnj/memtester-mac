@@ -64,23 +64,17 @@ kHardDifficulty = 2
 }
 
 - (void)generateEasyItem{
-	srand((unsigned int) time(0));
-    srand(rand());
-    int generatedNumber = 10 + rand() / ( RAND_MAX / ( 0 - 10 ) + 1 );
+    int generatedNumber = arc4random_uniform(10);
     [self.generatedItems addObject:[NSString stringWithFormat:@"%d", generatedNumber]];
 }
 
 - (void)generateMediumItem{
-	srand((unsigned int) time(0));
-    srand(rand());
-    char generatedLetter = 122 + rand() / ( RAND_MAX / ( 97 - 122 ) + 1 );
+    char generatedLetter = arc4random_uniform(26) + 'a';
     [self.generatedItems addObject:[NSString stringWithFormat:@"%c", generatedLetter]];
 }
 
 - (void)generateHardItem{
-	srand((unsigned int) time(0));
-    srand(rand());
-    char generatedCharacter = 126 + rand() / ( RAND_MAX / ( 32 - 126 ) + 1 );
+    char generatedCharacter = arc4random_uniform(94) + '!';
     [self.generatedItems addObject:[NSString stringWithFormat:@"%c", generatedCharacter]];
 }
 
