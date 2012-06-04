@@ -43,7 +43,7 @@ kQuitGame = 2
     
     self.displayItemsTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
                                                               target:self
-                                                            selector:@selector(displayItems)
+                                                            selector:@selector(displayItem)
                                                             userInfo:nil
                                                              repeats:YES];
     self.displayItemsTimerCount = 0;

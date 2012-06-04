@@ -34,7 +34,7 @@
 
 - (void)startNewGame;
 - (void)getNewItem;
-- (void)displayItems;
+- (void)displayItem;
 
 - (void)checkEnteredItems;
 
