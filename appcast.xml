@@ -11,7 +11,7 @@
 				http://alexjohnj.github.com/memtester-mac/changelog.html
 			</sparkle:releaseNotesLink>
 			<pubDate>Sun, 05 Jun 2012 21:46:36 +1000</pubDate>
-			<enclosure url="https://github.com/downloads/alexjohnj/memtester-mac/Memtester-1.0.zip" sparkle:version="1.0" sparkle:shortVersionString="1.0" length="701000" type="application/octet-stream" sparkle:dsaSignature="MC0CFBjdqHYxl6ZnHUX6AllBaHBegI9VAhUAigcjlsg8i7Q3qec0DZur877nEL4="/>
+			<enclosure url="https://github.com/downloads/alexjohnj/memtester-mac/Memtester-1.0.zip" sparkle:version="1" sparkle:shortVersionString="1.0" length="701000" type="application/octet-stream" sparkle:dsaSignature="MC0CFBjdqHYxl6ZnHUX6AllBaHBegI9VAhUAigcjlsg8i7Q3qec0DZur877nEL4="/>
 		</item>
 	</channel>
 </rss>
