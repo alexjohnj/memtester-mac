@@ -158,9 +158,7 @@ kQuitGame = 2
             return NSOrderedSame;
 
         }] mutableCopy];
-    
-    NSLog(@"Unsorted:%@\n Sorted:%@" ,currentDifficultysHighScores, sortedScores);
-    
+        
     if(self.currentGame.score > [[[sortedScores objectAtIndex:(sortedScores.count - 1)] valueForKey:@"score"] integerValue]){
         [sortedScores removeObjectAtIndex:(sortedScores.count - 1)];
         if(self.difficulty == 0)
