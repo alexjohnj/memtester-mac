@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA241542157E9C7600FA65A2 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA241541157E9C7600FA65A2 /* Sparkle.framework */; };
+		FA241549157E9CA200FA65A2 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA241541157E9C7600FA65A2 /* Sparkle.framework */; };
+		FA24154B157E9DD500FA65A2 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = FA24154A157E9DD500FA65A2 /* dsa_pub.pem */; };
 		FA4878BD15603A1D0040C5FF /* SCHighScoresSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4878BB15603A1D0040C5FF /* SCHighScoresSheetController.m */; };
 		FA4878BE15603A1D0040C5FF /* SCHighScoresSheetController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4878BC15603A1D0040C5FF /* SCHighScoresSheetController.xib */; };
 		FA4FAC641558509E0031B712 /* SCGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4FAC631558509E0031B712 /* SCGameView.xib */; };
@@ -27,7 +30,22 @@
 		FA7D01B01558680D0064FA29 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = FA7D01AF1558680D0064FA29 /* icon.icns */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FA241548157E9C9900FA65A2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FA241549157E9CA200FA65A2 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		FA241541157E9C7600FA65A2 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		FA24154A157E9DD500FA65A2 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		FA4878BA15603A1D0040C5FF /* SCHighScoresSheetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCHighScoresSheetController.h; sourceTree = "<group>"; };
 		FA4878BB15603A1D0040C5FF /* SCHighScoresSheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCHighScoresSheetController.m; sourceTree = "<group>"; };
 		FA4878BC15603A1D0040C5FF /* SCHighScoresSheetController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SCHighScoresSheetController.xib; sourceTree = "<group>"; };
@@ -67,6 +85,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA6078B01557F7990006D971 /* Cocoa.framework in Frameworks */,
+				FA241542157E9C7600FA65A2 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +154,7 @@
 		FA6078AE1557F7990006D971 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA241541157E9C7600FA65A2 /* Sparkle.framework */,
 				FA6078AF1557F7990006D971 /* Cocoa.framework */,
 				FA6078B11557F7990006D971 /* Other Frameworks */,
 			);
@@ -172,6 +192,7 @@
 		FA6078B61557F7990006D971 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FA24154A157E9DD500FA65A2 /* dsa_pub.pem */,
 				FA7D01AF1558680D0064FA29 /* icon.icns */,
 				FA6078B71557F7990006D971 /* Memtester-Info.plist */,
 				FA6078B81557F7990006D971 /* InfoPlist.strings */,
@@ -192,6 +213,7 @@
 				FA6078A71557F7990006D971 /* Sources */,
 				FA6078A81557F7990006D971 /* Frameworks */,
 				FA6078A91557F7990006D971 /* Resources */,
+				FA241548157E9C9900FA65A2 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -242,6 +264,7 @@
 				FA7094E0155FE9FA00BA7F41 /* SCGameOverHighScoreSheet.xib in Resources */,
 				FA7094E3155FEB4C00BA7F41 /* SCGameOverLoserSheet.xib in Resources */,
 				FA4878BE15603A1D0040C5FF /* SCHighScoresSheetController.xib in Resources */,
+				FA24154B157E9DD500FA65A2 /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +366,10 @@
 		FA6078CA1557F7990006D971 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Memtester/Memtester-Prefix.pch";
 				INFOPLIST_FILE = "Memtester/Memtester-Info.plist";
@@ -354,6 +381,10 @@
 		FA6078CB1557F7990006D971 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Memtester/Memtester-Prefix.pch";
 				INFOPLIST_FILE = "Memtester/Memtester-Info.plist";
