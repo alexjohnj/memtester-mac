@@ -1,3 +1,3 @@
 User-agent: *
 Disallow: /appcast.xml
-Sitemap: http://alexjohnj.github.com/symsteam/sitemap.xml
+Sitemap: http://alexjohnj.github.com/memtester-mac/sitemap.xml
