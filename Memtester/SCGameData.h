@@ -12,8 +12,8 @@
 @property (assign) int difficulty;
 @property (assign) int itemsLeftToEnter;
 @property (assign) int cheatsLeft;
-@property (retain) NSMutableArray *generatedItems;
-@property (retain) NSMutableArray *enteredItems;
+@property (copy) NSMutableArray *generatedItems;
+@property (copy) NSMutableArray *enteredItems;
 
 -(void)generateNewItem;
 -(void)generateEasyItem;

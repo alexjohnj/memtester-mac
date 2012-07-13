@@ -9,7 +9,7 @@
 
 @interface SCHighScoresController : NSObject
 
-@property (strong) NSMutableDictionary *highScores; 
+@property (copy) NSMutableDictionary *highScores; 
 
 - (BOOL)checkHighScoresFileExists;
 - (BOOL)createHighScoresFile;

@@ -12,8 +12,9 @@
 @interface SCAppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
-@property (strong) SCDifficultyPickerWindowController *difficultyChooser;
 @property (weak) IBOutlet NSView *gameView;
+
+@property (strong) SCDifficultyPickerWindowController *difficultyChooser;
 
 @property (strong) SCGameController *gameViewController;
 
