@@ -43,6 +43,10 @@ kQuitGame = 2
     [self.scoreField setStringValue:[NSString stringWithFormat:@"%d", self.score]];
 }
 
+- (void)awakeFromNib {
+    [[self window] setPreventsApplicationTerminationWhenModal:NO];
+}
+
 - (void)saveHighScore{
     SCHighScoresController *highScoresController = [[SCHighScoresController alloc] init];
     

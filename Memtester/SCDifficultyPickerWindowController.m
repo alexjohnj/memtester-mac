@@ -38,6 +38,10 @@ kShowHighScores = 98
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
 }
 
+- (void)awakeFromNib {
+    [[self window] setPreventsApplicationTerminationWhenModal:NO];
+}
+
 -(IBAction)chooseEasyLevel:(id)sender{
     [NSApp endSheet:self.window returnCode:kEasyMode];
 }

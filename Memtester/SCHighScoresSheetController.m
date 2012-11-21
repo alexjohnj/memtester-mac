@@ -34,6 +34,10 @@ static NSString * const hardModeHighScores = @"hardModeHighScores";
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
 }
 
+- (void)awakeFromNib {
+    [[self window] setPreventsApplicationTerminationWhenModal:NO];
+}
+
 - (IBAction)easyButtonClicked:(id)sender{
     if(self.easyScoresButton.state == NSOffState && self.mediumScoresButton.state == NSOffState && self.hardScoresButton.state == NSOffState)
         self.easyScoresButton.state = NSOnState;
