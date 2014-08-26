@@ -64,7 +64,7 @@ kQuitGame = 2
     
     NSString *userName = self.nameField.stringValue;
     if([userName isEqualToString:@""])
-        userName = [[NSString alloc] initWithString:@"Anonymous"];
+        userName = @"Anonymous";
     
     NSMutableDictionary *scoreEntry = [[NSMutableDictionary alloc] init];
     [scoreEntry setValue:userName forKey:@"name"];

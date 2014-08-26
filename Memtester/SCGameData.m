@@ -16,7 +16,7 @@ kMediumDifficulty = 1,
 kHardDifficulty = 2
 };
 
-- (id)initWithDifficultyLevel:(int)level{
+- (id)initWithDifficultyLevel:(NSInteger)level{
     self = [super init];
     if(self){
         generatedItems = [[NSMutableArray alloc] init];

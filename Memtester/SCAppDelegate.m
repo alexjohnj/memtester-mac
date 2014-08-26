@@ -19,12 +19,12 @@ static NSString * const hardModeHighScores = @"hardModeHighScores";
 @synthesize highScoresSheet;
 
 enum levelSelectionConstants{
-kEasyMode = 0,
-kMediumMode = 1,
-kHardMode = 2,
-kQuitApplication = 99,
-kShowHighScores = 98
-}; 
+    kEasyMode = 0,
+    kMediumMode = 1,
+    kHardMode = 2,
+    kQuitApplication = 99,
+    kShowHighScores = 98
+};
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
@@ -36,7 +36,7 @@ kShowHighScores = 98
         _levelChooser = [[SCDifficultyPickerWindowController alloc] initWithWindowNibName:@"SCDifficultyPickerWindow"];
     
     [NSApp beginSheet:self.difficultyChooser.window
-       modalForWindow:[[NSApp delegate] window]
+       modalForWindow:self.window
         modalDelegate:self
        didEndSelector:@selector(didEndSheet:returnCode:contextInfo:)
           contextInfo:NULL];
@@ -50,7 +50,7 @@ kShowHighScores = 98
         highScoresSheet = [[SCHighScoresSheetController alloc] initWithWindowNibName:@"SCHighScoresSheetController"];
     
     [NSApp beginSheet:self.highScoresSheet.window
-       modalForWindow:[[NSApp delegate] window]
+       modalForWindow:self.window
         modalDelegate:self
        didEndSelector:@selector(didEndSheet:returnCode:contextInfo:)
           contextInfo:NULL];
@@ -75,7 +75,9 @@ kShowHighScores = 98
         else{
             [self.gameViewController.displayItemsTimer invalidate];
             self.gameViewController = nil;
-            self.gameViewController = [[SCGameController alloc] initWithNibName:@"SCGameView" bundle:[NSBundle mainBundle] difficultyLevel:returnCode];
+            self.gameViewController = [[SCGameController alloc] initWithNibName:@"SCGameView"
+                                                                         bundle:[NSBundle mainBundle]
+                                                                difficultyLevel:returnCode];
             if(self.gameView.subviews.count == 0){
                 [self.gameView addSubview:self.gameViewController.view];
             }

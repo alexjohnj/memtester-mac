@@ -9,8 +9,8 @@
 @interface SCGameData : NSObject
 
 @property (assign) int score;
-@property (assign) int difficulty;
-@property (assign) int itemsLeftToEnter;
+@property (assign) NSInteger difficulty;
+@property (assign) NSUInteger itemsLeftToEnter;
 @property (assign) int cheatsLeft;
 @property (copy) NSMutableArray *generatedItems;
 @property (copy) NSMutableArray *enteredItems;
@@ -23,6 +23,6 @@
 -(void)storeSubmittedItem:(NSString *)anItem;
 -(BOOL)checkSubmittedItems;
 
--(id)initWithDifficultyLevel:(int)level;
+-(id)initWithDifficultyLevel:(NSInteger)level;
 
 @end

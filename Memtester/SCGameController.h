@@ -20,7 +20,7 @@
 @property (weak) IBOutlet NSButton *cheatButton2;
 @property (weak) IBOutlet NSButton *cheatButton3;
 
-@property (assign) int difficulty;
+@property (assign) NSInteger difficulty;
 @property (strong) SCGameData *currentGame;
 
 @property (strong) SCGameOverSheetController *gameOverSheet;
@@ -41,6 +41,6 @@
 - (BOOL)checkForHighScore;
 
 - (void)sheetDidEnd:(NSWindow *)sheet resultCode:(NSInteger)resultCode contextInfo:(void *)contextInfo;
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil difficultyLevel:(int)level;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil difficultyLevel:(NSInteger)level;
 
 @end

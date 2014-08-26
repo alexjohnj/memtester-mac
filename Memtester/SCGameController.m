@@ -19,12 +19,12 @@ static NSString * const hardModeHighScores = @"hardModeHighScores";
 @synthesize gameOverSheet;
 
 enum sheetDismissalCode{
-kNewGame = 0,
-kMainMenu = 1,
-kQuitGame = 2
+    kNewGame = 0,
+    kMainMenu = 1,
+    kQuitGame = 2
 };
 
--(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil difficultyLevel:(int)level{
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil difficultyLevel:(NSInteger)level{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if(self){
         difficulty = level;
@@ -85,7 +85,7 @@ kQuitGame = 2
         [self.itemsGuessField setEnabled:YES];
         [self.itemField setStringValue:@""];
         [[self.itemField animator] setAlphaValue:1.0];
-        [[[NSApp delegate] window] makeFirstResponder:self.itemsGuessField];
+        [[NSApp mainWindow] makeFirstResponder:self.itemsGuessField];
         return;
     }
     
@@ -115,14 +115,17 @@ kQuitGame = 2
         BOOL highScore = [self checkForHighScore];
         if(highScore == YES){
             self.gameOverSheet = nil;
-            self.gameOverSheet = [[SCGameOverSheetController alloc] initWithWindowNibName:@"SCGameOverHighScoreSheet" score:self.currentGame.score isHighScore:YES difficulty:self.currentGame.difficulty];
+            self.gameOverSheet = [[SCGameOverSheetController alloc] initWithWindowNibName:@"SCGameOverHighScoreSheet"
+                                                                                    score:self.currentGame.score
+                                                                              isHighScore:YES
+                                                                               difficulty:self.currentGame.difficulty];
         }
         else{
             self.gameOverSheet = nil;
             self.gameOverSheet = [[SCGameOverSheetController alloc] initWithWindowNibName:@"SCGameOverLoserSheet" score:self.currentGame.score isHighScore:NO difficulty:self.currentGame.difficulty];
         }
         [NSApp beginSheet:self.gameOverSheet.window
-           modalForWindow:[[NSApp delegate] window]
+           modalForWindow:[NSApp mainWindow]
             modalDelegate:self
            didEndSelector:@selector(sheetDidEnd:resultCode:contextInfo:)
               contextInfo:NULL];
@@ -147,18 +150,18 @@ kQuitGame = 2
     
     if(currentDifficultysHighScores.count < 10)
         return YES;
-                      
+    
     NSMutableArray *sortedScores = [[currentDifficultysHighScores sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-            if([[obj1 valueForKey:@"score"] integerValue] > [[obj2 valueForKey:@"score"] integerValue])
-                return (NSComparisonResult)NSOrderedAscending; //yeah, I know this is the wrong way around. The array's easier to work with if it's reversed though, so using NSOrderedAscending will give me that reversed array easily. 
-            
-            if([[obj1 valueForKey:@"score"] integerValue] < [[obj2 valueForKey:@"score"] integerValue])
-                return (NSComparisonResult)NSOrderedDescending;
-            
-            return NSOrderedSame;
-
-        }] mutableCopy];
+        if([[obj1 valueForKey:@"score"] integerValue] > [[obj2 valueForKey:@"score"] integerValue])
+            return (NSComparisonResult)NSOrderedAscending; //yeah, I know this is the wrong way around. The array's easier to work with if it's reversed though, so using NSOrderedAscending will give me that reversed array easily.
         
+        if([[obj1 valueForKey:@"score"] integerValue] < [[obj2 valueForKey:@"score"] integerValue])
+            return (NSComparisonResult)NSOrderedDescending;
+        
+        return NSOrderedSame;
+        
+    }] mutableCopy];
+    
     if(self.currentGame.score > [[[sortedScores objectAtIndex:(sortedScores.count - 1)] valueForKey:@"score"] integerValue]){
         [sortedScores removeObjectAtIndex:(sortedScores.count - 1)];
         if(self.difficulty == 0)
@@ -173,12 +176,12 @@ kQuitGame = 2
     }
     else
         [highScoresController saveNewHighScores];
-        return NO;
+    return NO;
     
 }
 
 - (void)sheetDidEnd:(NSWindow *)sheet resultCode:(NSInteger)resultCode contextInfo:(void *)contextInfo {
-	switch (resultCode) {
+    switch (resultCode) {
         case kNewGame:
             [sheet orderOut:self];
             [self startNewGame];
